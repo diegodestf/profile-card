@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --desaturated-blue: hsl(229, 23%, 23%);
+  --grayish-blue: hsl(227, 10%, 46%);
+
+  --dark-gray: hsl(0, 0%, 59%);
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+
+  --ff-kumbh: 'Kumbh Sans', sans-serif;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-image: url('./images/bg-pattern-bottom.svg'),
+    url('./images/bg-pattern-top.svg');
+  background-color: var(--dark-cyan);
+  background-position: right 48vw bottom 40vh, left 45vw top 44vh;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 50vh;
+  font-family: var(--ff-kumbh);
+  font-weight: var(--fw-normal);
+  font-size: 18px;
+  color: var(--desaturated-blue);
+}
+
+.card {
+  position: relative;
+  max-width: 3754px;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 3px 8px 23px -3px rgba(0, 0, 0, 0.52);
+}
+
+.card__content {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  background-color: white;
+  padding-top: 4rem;
+}
+
+.card__avatar {
+  position: absolute;
+  margin-top: 25%;
+}
+
+#avatar {
+  border-radius: 4rem;
+  border: 5px solid white;
+  cursor: pointer;
+}
+
+.card__content--avatar-info {
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+  font-weight: var(--fw-bold);
+}
+
+.card__content--avatar-info span {
+  color: var(--dark-gray);
+  font-weight: var(--fw-normal);
+}
+
+.card__content--avatar-city {
+  font-size: 16px;
+  text-align: center;
+  padding-bottom: 2rem;
+  color: var(--dark-gray);
+  border-bottom: 1px solid var(--dark-gray);
+  width: 100%;
+}
+
+.card__content--card-stats {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  text-align: center;
+  font-weight: var(--fw-bold);
+  line-height: 1.5rem;
+}
+
+.card__content--card-stats span {
+  color: var(--dark-gray);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1rem;
+  font-size: 12px;
+}
+
+.card__stats--followers,
+.card__stats--likes,
+.card__stats--photos {
+  display: flex;
+  flex-direction: column;
+}
